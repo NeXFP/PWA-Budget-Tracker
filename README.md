@@ -16,13 +16,6 @@
 Giving users a fast and easy way to track their money is important, but allowing them to access that information at any time is even more important. Having offline functionality is paramount to the success of an application that handles users’ financial information. With that in mind, enter Budget Tracker. A Progressive Web Application that uses a noSQL database and offline persistance to deliver the ultimate end user experience for budgeting on the go. 
 
 
-# Table of Contents 
-
-- [Repository](#repository)
-- [Screenshot](#screenshots)
-- [License](#license)
-- [Technologies Used](#languages)
-
 ## Repository: 
 - [My Github Profile](https://github.com/NeXFP)
 
