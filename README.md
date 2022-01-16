@@ -2,10 +2,12 @@
 
 # Budget Tracker
 
-## Repository: 
-- [My Github Profile](https://github.com/suschuk24)
+# Table of Contents 
 
-- [This Repository](# Budget Tracker
+- [Repository](#repository)
+- [Screenshot](#screenshots)
+- [License](#license)
+- [Technologies Used](#languages)
 
 ## Description:
 
