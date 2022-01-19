@@ -48,21 +48,41 @@ self.addEventListener('activate', function (e) {
             })
     );
 });
+self.addEventListener("fetch", function(event) {
+    if (event.request.url.includes("/api/")) {
+        event.respondWith(
+            caches.open(CACHE_NAME)
+                .then(cache => {
+                    return fetch(event.request)
+                        .then(response => {
+                            if (response.status === 200) {
+                                cache.put(event.request.url, response.clone());
+                            }
 
+                            return response;
+                        })
+                        .catch(err => {
+                            return cache.match(event.request);
+                        });
+                })
+                .catch(err => console.log(err))
+        );
 
-self.addEventListener('fetch', function (e) {
-    console.log('fetch request : ' + e.request.url)
-    e.respondWith(
-        caches
-            .match(e.request)
-            .then(function (request) {
-                if (request) { 
+        return;
+    };
 
-                    return request
-                } else {       
-
-                    return fetch(e.request)
-                }
+    event.respondWith(
+        fetch(event.request)
+            .catch(() => {
+                return caches.match(event.request)
+                    .then(response => {
+                        if (response) {
+                            return response;
+                        }
+                        else if (event.request.headers.get("accept").includes("text/html")) {
+                            return caches.match("/");
+                        }
+                    });
             })
-    )
-})
+    );
+});

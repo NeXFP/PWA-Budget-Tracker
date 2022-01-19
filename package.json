@@ -22,6 +22,7 @@
     "compression": "^1.7.4",
     "express": "^4.17.2",
     "idb": "^7.0.0",
+    "indexeddb": "0.0.0",
     "mongoose": "^5.13.14",
     "morgan": "^1.10.0"
   }
