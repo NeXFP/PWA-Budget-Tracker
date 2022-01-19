@@ -50,7 +50,7 @@
     ],
     
     "display": "standalone",
-    "start_url": "https://pwa-budgets.herokuapp.com/",
+    "start_url": "./index.html",
     "background_color": "#ffffff",
     "theme_color": "#ffffff"
   }
